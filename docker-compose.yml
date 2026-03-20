@@ -14,6 +14,7 @@
   # The Playwright Container
   playwright:
     image: mcr.microsoft.com/playwright:v1.45.0-jammy
+    command: sh -c "npm install && npx playwright test"
     depends_on:
       frontend:
         condition: service_healthy
@@ -22,4 +23,3 @@
     working_dir: /app
     environment:
       - BASE_URL=http://frontend
-    command: npx playwright test
