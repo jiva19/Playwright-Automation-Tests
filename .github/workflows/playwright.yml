@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tests with Docker Compose
-        run: docker-compose up --exit-code-from playwright
+        run: docker compose up --exit-code-from playwright
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4
