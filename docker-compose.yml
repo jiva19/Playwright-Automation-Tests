@@ -1,0 +1,25 @@
+﻿services:
+  #  Frontend Container
+  frontend:
+    image: ghcr.io/jiva19/frontend-angular:latest
+    ports:
+      - "80:80"
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # The Playwright Container
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.45.0-jammy
+    depends_on:
+      frontend:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - BASE_URL=http://frontend
+    command: npx playwright test
