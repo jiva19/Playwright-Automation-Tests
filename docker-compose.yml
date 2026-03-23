@@ -11,7 +11,7 @@
       timeout: 5s
       retries: 5
 
-  # The Playwright Container
+  # The Playwright Container 
   playwright:
     image: mcr.microsoft.com/playwright:v1.58.2-jammy
     command: sh -c "npm install && npx playwright test"
