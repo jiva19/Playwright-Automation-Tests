@@ -32,9 +32,9 @@ export default defineConfig({
     trace: 'on-first-retry',
    // baseURL: 'http://localhost:4200',
     baseURL: 'http://frontend',
-    
+    screenshot: 'on',
     // Options: 'off', 'on', 'retain-on-failure', 'on-first-retry'
-    video: 'on-first-retry',
+    video: 'on',
     
   },
 
