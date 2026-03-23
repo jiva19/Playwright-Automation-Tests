@@ -40,8 +40,8 @@ test.describe('Login Tests', () => {
   });
 
   test('mocking a server failure (500 error)', async ({ page }) => {
-    const login = new LoginPage(page);
-    await page.goto('http://localhost:4200/login');
+ /*   const login = new LoginPage(page);
+    await page.goto('http://localhost:4200/login');*/
 
     // 1. SET UP THE MOCK (The Interceptor)
     await page.route('**/api/v1/auth', async (route) => {
